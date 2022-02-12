@@ -1,4 +1,5 @@
 # CSE360
 GUI Desktop application for a restaurant <br />
-Jacob Jansen
-Craig Wilson
+Jacob Jansen <br />
+Craig Wilson <br />
+Albert Negoro <br />
