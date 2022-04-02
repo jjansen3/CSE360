@@ -1,9 +1,14 @@
 package GUI;
 
+import Main.Main;
+import Main.MenuItem;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
@@ -15,7 +20,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import Main.*;
+
+import java.io.IOException;
 
 
 //This GUI class allows the dev to add a new item to the menu
@@ -32,10 +38,10 @@ public class devMenuGUI {
         menuGUI.setAlignment(Pos.CENTER);
 
         //Setting up the buttons for the dev navigation
-        ImageView addMenuPic = new ImageView("Resources/addmenu.png");
+        ImageView addMenuPic = new ImageView("Assets/addmenu.png");
         addMenuPic.setFitHeight(100);
         addMenuPic.setFitWidth(122);
-        ImageView addCouponPic = new ImageView("Resources/coupon.png");
+        ImageView addCouponPic = new ImageView("Assets/coupon.png");
         addCouponPic.setFitHeight(100);
         addCouponPic.setFitWidth(136);
         Button addToMenu = new Button();
@@ -87,7 +93,7 @@ public class devMenuGUI {
         //A plus button to add a new food
         Button addFood = new Button();
         addFood.setPrefSize(400, 150);
-        ImageView image = new ImageView("Resources/plus.png");
+        ImageView image = new ImageView("Assets/plus.png");
         image.setFitWidth(150);
         image.setFitHeight(87);
         addFood.setGraphic(image);
@@ -115,8 +121,14 @@ public class devMenuGUI {
             @Override
             public void handle(ActionEvent event) {
                 //switch to main page
+                try {
+                    goToHome(event);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
+
 
         //Adding everything to the main stack pane
         StackPane sp = new StackPane();
@@ -136,6 +148,14 @@ public class devMenuGUI {
     //Returns this scene
     public Scene getScene() {
         return devMenuScene;
+    }
+
+    public void goToHome(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("../Scenes/homePage.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

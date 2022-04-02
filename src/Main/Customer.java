@@ -17,10 +17,10 @@ public class Customer {
     ArrayList<Card> cards;
 
 
-    Customer(String fName, String lName, String email, String pass, String refCode, String phoneNum, String address, ArrayList<Order> orders, Order cart, ArrayList<Coupon> coupons, ArrayList<Card> cards) {
+    Customer(String email, String fName, String lName, String pass, String refCode, String phoneNum, String address, ArrayList<Order> orders, Order cart, ArrayList<Coupon> coupons, ArrayList<Card> cards) {
+        this.email = email;
         this.fName = fName;
         this.lName = lName;
-        this.email = email;
         this.pass = pass;
         this.refCode = refCode;
         this.phoneNum = phoneNum;
@@ -29,6 +29,8 @@ public class Customer {
         this.cart = cart;
         this.coupons = coupons;
         this.cards = new ArrayList<>(cards);
+
+        System.out.println(this.fName);
     }
 
     void addCoupon(String desc, String code, String valid) {

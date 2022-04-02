@@ -1,5 +1,7 @@
 package GUI;
 
+import Main.Main;
+import Main.MenuItem;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -20,7 +22,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import Main.*;
+
 import java.io.File;
 
 //This GUI class allows the dev to add a picture, name, ingredients, and price to a menu item.
@@ -101,7 +103,7 @@ public class addFoodGUI {
         TextField priceTBox = new TextField();
         priceTBox.setPromptText("Set the price");
         priceTBox.setMaxSize(100, 30);
-        ImageView image = new ImageView("Resources/addpic.png");
+        ImageView image = new ImageView("Assets/addpic.png");
         image.setFitHeight(200);
         image.setFitWidth(200);
         Button button = new Button();
