@@ -1,0 +1,60 @@
+package Main;
+
+import java.util.ArrayList;
+
+public class Customer {
+
+    String fName;
+    String lName;
+    String email;
+    String pass;
+    String refCode;
+    String phoneNum;
+    String address;
+    ArrayList<Order> orders;
+    Order cart;
+    ArrayList<Coupon> coupons;
+    ArrayList<Card> cards;
+
+
+    Customer(String email, String fName, String lName, String pass, String refCode, String phoneNum, String address, ArrayList<Order> orders, Order cart, ArrayList<Coupon> coupons, ArrayList<Card> cards) {
+        this.email = email;
+        this.fName = fName;
+        this.lName = lName;
+        this.pass = pass;
+        this.refCode = refCode;
+        this.phoneNum = phoneNum;
+        this.address = address;
+        this.orders = new ArrayList<>(orders);
+        this.cart = cart;
+        this.coupons = coupons;
+        this.cards = new ArrayList<>(cards);
+
+        System.out.println(this.fName);
+    }
+
+    void addCoupon(String desc, String code, String valid) {
+        Coupon coupon = new Coupon(desc, code, valid);
+        coupons.add(coupon);
+    }
+
+    void remCoupon(Coupon coupon) {
+        coupons.remove(coupon);
+    }
+
+    void addOrder(int orderNum, Cart inputCart, String date) {
+        Order order = new Order(orderNum, inputCart, date);
+        orders.add(order);
+    }
+
+    void addCart(int orderNum, Cart inputCart, String date) {
+        Order order = new Order(orderNum, inputCart, date);
+        cart = order;
+    }
+
+    void addCard(int num, String exp, int sec, String country, int zip) {
+        Card card = new Card(num, exp, sec, country, zip);
+        cards.add(card);
+    }
+
+}
