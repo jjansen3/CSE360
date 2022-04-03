@@ -19,9 +19,9 @@
             </image>
         </ImageView>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fff9ed" height="106.0" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
-        <Label alignment="CENTER" layoutX="383.0" layoutY="13.0" prefHeight="88.0" prefWidth="514.0" text="Oregano's Trattoria">
+        <Label alignment="CENTER" layoutX="290.0" prefHeight="100.0" prefWidth="700.0" text="Oregano's Trattoria" textAlignment="CENTER">
             <font>
-                <Font size="60.0" />
+                <Font name="Lucida Calligraphy Italic" size="64.0" />
             </font>
         </Label>
         <Label layoutX="150.0" layoutY="120.0" text="First Name" textFill="WHITE">
