@@ -83,9 +83,9 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label alignment="CENTER" layoutX="90.0" layoutY="70.0" prefHeight="220.0" prefWidth="1100.0" text="Oregano's Trattoria" textAlignment="CENTER">
+        <Label alignment="CENTER" layoutX="40.0" layoutY="120.0" prefHeight="220.0" prefWidth="1200.0" text="Oregano's Trattoria" textAlignment="CENTER">
             <font>
-                <Font name="Bonheur Royale Regular" size="172.0" />
+                <Font name="Lucida Calligraphy Italic" size="110.0" />
             </font>
         </Label>
       <Text layoutX="270.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We welcome you to sit back, unwind and appreciate the authentic Italian family recipes as our gourmet experts sets you up a scrumptious dinner utilizing the best and freshest ingredients.﻿" textAlignment="CENTER" wrappingWidth="740.0">
@@ -93,7 +93,7 @@
             <Font size="34.0" />
          </font>
       </Text>
-      <Text layoutX="45.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email: og.trattoria@restaurant.org" wrappingWidth="520.0">
+      <Text layoutX="45.0" layoutY="690.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email: og.trattoria@res.org" wrappingWidth="520.0">
          <font>
             <Font size="34.0" />
          </font>
