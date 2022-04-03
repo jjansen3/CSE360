@@ -1,6 +1,6 @@
 package Main;
 
-import GUI.Start;
+import Main.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +24,6 @@ public class Register {
     private boolean noNull = false;
     private boolean password_match = false;
     private boolean regDone = false;
-    //public String fName, lName, emailAddress, refCode, passw;
 
 
     @FXML
@@ -34,12 +33,14 @@ public class Register {
     @FXML
     private PasswordField password, rePassword;
 
+
+
     public void userRegister(ActionEvent event) throws IOException {
         verifyRegistration();
         storeUserInfo();
 
-
         if (regDone == true) {
+            //Profile.displayInfo();
             goToHome(event);
         }
     }
@@ -78,21 +79,10 @@ public class Register {
     }
 
     // Store in database
-    public void storeUserInfo() throws IOException {
+    public void storeUserInfo() throws NullPointerException {
 
         if (allowEmail == true && noNull == true && password_match == true) {
-
-            /*
-            fName = firstName.getText();
-            lName = lastName.getText();
-            emailAddress = email.getText();
-            refCode = referralCode.getText();
-            passw = password.getText();
-            */
-            ArrayList<Customer> db = new ArrayList();
-
-
-
+            Main.customers.add(new Customer(email.getText(), firstName.getText(), lastName.getText(), password.getText(), referralCode.getText(), "", "", new ArrayList<>(), null, new ArrayList<>(), new ArrayList<>()));
             regDone = true;
             Login.custLoggedIn = true;
         }

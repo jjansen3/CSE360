@@ -33,7 +33,13 @@ public class Login {
 
 
     // Retrieve Info
+    public String getUsername() {
+        return username.getText();
+    }
 
+    public String getPassword() {
+        return password.getText();
+    }
 
 
     public void userLogin(ActionEvent event) throws IOException {
@@ -42,11 +48,13 @@ public class Login {
         if (devLogin == true) {
             wrongLogin.setText("Dev Login");
             custLoggedIn = true;
+            //Profile.displayInfo();
             promptDevMode(event);
         }
 
         else if (match == true) {
             custLoggedIn = true;
+            //Profile.displayInfo();
             goToHome(event);
         }
     }
@@ -55,22 +63,28 @@ public class Login {
     private void checkLogin() throws IOException {
         // Dev/owner logging in
         //if (username.getText().equals("og.trattoria@res.org") && password.getText().equals("oregano123")) {
-        if (username.getText().equals("asd") && password.getText().equals("asd")) {
+        if (username.getText().equals("og.trattoria@res.org") && password.getText().equals("oregano123")) {
             devLogin = true;
         }
-        // if username and password matches in database
-        else if (username.getText().equals("123") && password.getText().equals("123")) {
-            match = true;
-        }
-        // if username and password have empty field
-        else if (username.getText().isEmpty() || password.getText().isEmpty()) {
-            wrongLogin.setText("Enter your data");
-        }
-        // else display login error
         else {
-            wrongLogin.setText("Invalid username and password");
+            for (int i = 0; i < Main.customers.size(); i++) {
+                if (username.getText().equals(Main.customers.get(i).email) && password.getText().equals(Main.customers.get(i).pass)) {
+                    match = true;
+                }
+            }
+
+            // if username and password have empty field
+            if (username.getText().isEmpty() || password.getText().isEmpty()) {
+                wrongLogin.setText("Enter your data");
+            }
+            // else display login error
+            else {
+                wrongLogin.setText("Invalid username and password");
+            }
         }
     }
+
+
 
     public void goToLandingPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("../Scenes/landingPage.fxml"));

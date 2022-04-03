@@ -24,6 +24,22 @@ public class Profile {
 
     @FXML
     private SplitMenuButton accountMenu;
+    @FXML
+    public static Label displayfName, displaylName, displayEmail, displayAddr;
+
+
+    /*
+    public static void displayInfo() {
+        for (int i = 0; i<Main.customers.size();i++) {
+            displayfName.setText(Main.customers.get(i).fName);
+            displaylName.setText(Main.customers.get(i).lName);
+            displayEmail.setText(Main.customers.get(i).email);
+            displayAddr.setText(Main.customers.get(i).address);
+        }
+
+    }
+
+     */
 
 
     // App Navigation
