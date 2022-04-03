@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Cart">
+   <children>
+      <AnchorPane fx:id="landingPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0">
+          <children>
+              <Label layoutX="40.0" layoutY="130.0" style="-fx-font-weight: bold;" text="Cart">
+                  <font>
+                      <Font name="Arial" size="36.0" />
+                  </font>
+              </Label>
+            <Line endX="580.0" layoutX="40.0" layoutY="175.0" />
+            <ScrollPane layoutX="40.0" layoutY="190.0" prefHeight="465.0" prefWidth="560.0">
+               <content>
+                  <AnchorPane prefHeight="594.0" prefWidth="540.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutX="20.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="480.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutX="20.0" layoutY="190.0" stroke="BLACK" strokeType="INSIDE" width="480.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutX="20.0" layoutY="360.0" stroke="BLACK" strokeType="INSIDE" width="480.0" />
+                        <ImageView fitHeight="108.0" fitWidth="124.0" layoutX="41.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/las.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="nameIngredient" layoutX="165.0" layoutY="50.0" text="nameIngredient go here">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="price" layoutX="347.0" layoutY="50.0" text="Price">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="420.0" layoutY="46.0" prefHeight="30.0" prefWidth="41.0" text="SIZE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <SplitMenuButton layoutX="391.0" layoutY="83.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Small" />
+                            <MenuItem mnemonicParsing="false" text="Medium" />
+                              <MenuItem mnemonicParsing="false" text="Large" />
+                          </items>
+                        </SplitMenuButton>
+                        <Label fx:id="descIngredient" alignment="TOP_LEFT" layoutX="165.0" layoutY="75.0" prefHeight="83.0" prefWidth="218.0" wrapText="true" text="Description of ingredient goes here" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <Line endX="580.0" layoutX="668.0" layoutY="175.0" />
+            <Label layoutX="668.0" layoutY="130.0" style="-fx-font-weight: bold;" text="Address">
+               <font>
+                  <Font name="Arial" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="address" alignment="TOP_LEFT" layoutX="668.0" layoutY="190.0" prefHeight="60.0" prefWidth="204.0" text="Please input Address">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="1083.0" layoutY="199.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="108.0" text="Edit" />
+            <Line endX="580.0" layoutX="668.0" layoutY="295.0" />
+            <Label layoutX="668.0" layoutY="250.0" style="-fx-font-weight: bold;" text="Payment">
+               <font>
+                  <Font name="Arial" size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="668.0" layoutY="300.0" prefHeight="27.0" prefWidth="100.0" text="Card Number">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField layoutX="666.0" layoutY="327.0" promptText="Card Number" />
+            <Label alignment="TOP_LEFT" layoutX="670.0" layoutY="360.0" prefHeight="27.0" prefWidth="100.0" text="Exp. Date">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField layoutX="666.0" layoutY="387.0" prefHeight="26.0" prefWidth="80.0" promptText="MM / YY" />
+            <Label alignment="TOP_LEFT" layoutX="763.0" layoutY="360.0" prefHeight="27.0" prefWidth="100.0" text="Security Code">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField layoutX="763.0" layoutY="387.0" prefHeight="25.0" prefWidth="100.0" promptText="Security Code" />
+            <Label alignment="TOP_LEFT" layoutX="765.0" layoutY="424.0" prefHeight="27.0" prefWidth="73.0" text="State">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="666.0" layoutY="423.0" prefHeight="27.0" prefWidth="100.0" text="Zip Code">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField layoutX="763.0" layoutY="451.0" prefHeight="25.0" prefWidth="100.0" promptText="State" />
+            <TextField layoutX="666.0" layoutY="450.0" prefHeight="26.0" prefWidth="80.0" promptText="Zip Code" />
+            <CheckBox layoutX="703.0" layoutY="489.0" mnemonicParsing="false" text="Save Payment Method" />
+            <ScrollPane layoutX="958.0" layoutY="327.0" prefHeight="202.0" prefWidth="281.0">
+               <content>
+                  <AnchorPane prefHeight="199.0" prefWidth="279.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="67.0" layoutX="17.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="245.0" />
+                        <ImageView fitHeight="50.0" fitWidth="60.0" layoutX="36.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/credit_icon.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="112.0" layoutY="39.0" text="Type of C" />
+                        <Label layoutX="180.0" layoutY="39.0" text="XXXX" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <Label alignment="TOP_LEFT" layoutX="958.0" layoutY="300.0" prefHeight="27.0" prefWidth="100.0" text="Saved Cards">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Line endX="580.0" layoutX="667.0" layoutY="561.0" />
+            <Label layoutX="667.0" layoutY="516.0" style="-fx-font-weight: bold;" text="Coupons">
+               <font>
+                  <Font name="Arial" size="36.0" />
+               </font>
+            </Label>
+            <SplitMenuButton layoutX="667.0" layoutY="577.0" mnemonicParsing="false" text="Select Coupon">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Coupons go here" />
+                <MenuItem mnemonicParsing="false" text="Coupons go here" />
+              </items>
+            </SplitMenuButton>
+            <Line endX="580.0" layoutX="667.0" layoutY="611.0" />
+            <Label layoutX="665.0" layoutY="613.0" style="-fx-font-weight: bold;" text="Total">
+               <font>
+                  <Font name="Arial" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="1052.0" layoutY="618.0" text="MONEY AMMOUNT">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Button layoutX="823.0" layoutY="655.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="217.0" text="Place Order">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" layoutX="1166.0" layoutY="85.0" prefHeight="27.0" prefWidth="73.0" text="Account">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+          </children>
+      </AnchorPane>
+      <ImageView fx:id="homeIcon" fitHeight="60.0" fitWidth="60.0" layoutX="70.0" layoutY="26.0" onMousePressed="#goToHome" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Home_icon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="aboutUsIcon" fitHeight="60.0" fitWidth="60.0" layoutX="205.0" layoutY="26.0" onMousePressed="#goToAboutUs" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Contact_icon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="menuIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1035.0" layoutY="26.0" onMousePressed="#goToMenu" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Menu_icon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="accountIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1170.0" layoutY="26.0" onMousePressed="#goToAccount" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Account_icon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="1037.0" layoutY="84.0" prefHeight="27.0" prefWidth="56.0" text="Menu">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="357.0" layoutY="-10.0" prefHeight="132.0" prefWidth="586.0" text="Oregano's Trattoria" textAlignment="CENTER">
+         <font>
+            <Font name="Bonheur Royale Regular" size="90.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="195.0" layoutY="84.0" prefWidth="80.0" text="About Us">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="72.0" layoutY="84.0" prefWidth="56.0" text="Home">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
