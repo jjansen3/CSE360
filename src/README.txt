@@ -12,3 +12,5 @@ Registration and Login has not been connected to the Customer/Main class
 As of now, the users are not able to login
 
 Contents in /src/Resource have been copied into /src/Assets
+
+Change fonts into Lucida Calligraphy
