@@ -13,6 +13,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Login {
 
@@ -57,6 +58,12 @@ public class Login {
             //Profile.displayInfo();
             goToHome(event);
         }
+    }
+
+    public void guestLogin(ActionEvent event) throws IOException {
+        Login.custLoggedIn = true;
+        Main.currCust = new Customer("guest@og.res", "Guest", "Guest", "", "Guest0", "", "", new ArrayList<Order>(), null, new ArrayList<Coupon>(), new ArrayList<>());
+        goToHome(event);
     }
 
     // Connect to database
