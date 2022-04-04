@@ -14,6 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import java.io.IOException;
+import GUI.menuGUI;
 
 public class Profile {
 
@@ -60,11 +61,9 @@ public class Profile {
     }
 
     public void goToMenu(MouseEvent mouseEvent) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("../Scenes/placeholder.fxml"));
-        // root = FXMLLoader.load(getClass().getResource("../Scenes/menu.fxml"));
-        stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
+    	stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        menuGUI menuScene = new menuGUI(stage);
+        stage.setScene(menuScene.getScene());
         stage.show();
     }
 

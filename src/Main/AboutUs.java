@@ -50,8 +50,8 @@ public class AboutUs {
 
     public void cartButton(MouseEvent mouseEvent) throws IOException {
         if (Login.custLoggedIn == true){
-            //root = FXMLLoader.load(getClass().getResource("../Scenes/cart.fxml"));
-            root = FXMLLoader.load(getClass().getResource("../Scenes/aboutUs.fxml"));
+            root = FXMLLoader.load(getClass().getResource("../Scenes/cart.fxml"));
+            
         } else {
             root = FXMLLoader.load(getClass().getResource("../Scenes/login.fxml"));
         }
