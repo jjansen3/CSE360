@@ -10,7 +10,7 @@ public class Start extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("../Scenes/register.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../Scenes/landingPage.fxml"));
         primaryStage.setTitle("Oregano's Trattoria");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
