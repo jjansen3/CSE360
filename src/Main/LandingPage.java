@@ -3,6 +3,8 @@ Landing page controller
  */
 package Main;
 
+import GUI.ingredientsGUI;
+import GUI.menuGUI;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -34,12 +36,12 @@ public class LandingPage {
     }
 
     public void goToMenu(MouseEvent mouseEvent) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("../Scenes/placeholder.fxml"));
-        // root = FXMLLoader.load(getClass().getResource("../Scenes/menu.fxml"));
+
         stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        menuGUI menuScene = new menuGUI(stage);
+        stage.setScene(menuScene.getScene());
         stage.show();
+
     }
 
     public void goToCart(MouseEvent mouseEvent) throws IOException {

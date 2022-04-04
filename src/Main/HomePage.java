@@ -3,6 +3,7 @@ Landing page controller
  */
 package Main;
 
+import GUI.menuGUI;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -38,11 +39,10 @@ public class HomePage {
     }
 
     public void goToMenu(MouseEvent mouseEvent) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("../Scenes/placeholder.fxml"));
-        // root = FXMLLoader.load(getClass().getResource("../Scenes/menu.fxml"));
+
         stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        menuGUI menuScene = new menuGUI(stage);
+        stage.setScene(menuScene.getScene());
         stage.show();
     }
 
