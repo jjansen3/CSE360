@@ -19,6 +19,7 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import GUI.menuGUI;
 
 public class Cart implements Initializable{
 	
@@ -32,6 +33,7 @@ public class Cart implements Initializable{
     
     public void initialize(URL url, ResourceBundle rb){
     	//set text inside scrollpane to proper text
+        /*
     	if(Main.currCust != null)
     	{
         	nameIngredient.setText(Main.currCust.cart.items.get(0).name);
@@ -44,7 +46,7 @@ public class Cart implements Initializable{
     	{
         	address.setText(Main.currCust.address);
     	}
-
+        */
     	
     }
     
@@ -67,11 +69,9 @@ public class Cart implements Initializable{
     }
 
     public void goToMenu(MouseEvent mouseEvent) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("../Scenes/placeholder.fxml"));
-        // root = FXMLLoader.load(getClass().getResource("../Scenes/menu.fxml"));
         stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        menuGUI menuScene = new menuGUI(stage);
+        stage.setScene(menuScene.getScene());
         stage.show();
     }
 
@@ -85,7 +85,7 @@ public class Cart implements Initializable{
     }
 
     public void goToAccount(MouseEvent mouseEvent) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("../Scenes/profile.fxml"));
+        root = FXMLLoader.load(getClass().getResource("../Scenes/login.fxml"));
         stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

@@ -12,12 +12,16 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.io.IOException;
+import javafx.scene.control.Label;
 
 public class AboutUs {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private Label accountLabel;
+
+
 
 
     public void homeButton(MouseEvent mouseEvent) throws IOException {
@@ -68,7 +72,6 @@ public class AboutUs {
         } else {
             root = FXMLLoader.load(getClass().getResource("../Scenes/login.fxml"));
         }
-
         stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

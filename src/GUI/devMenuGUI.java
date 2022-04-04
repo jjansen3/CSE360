@@ -112,7 +112,12 @@ public class devMenuGUI {
         addCoupon.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                //switch to add coupon page
+                try {
+                    goToAddCoupon(event);
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -152,6 +157,14 @@ public class devMenuGUI {
 
     public void goToHome(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../Scenes/homePage.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void goToAddCoupon(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("../Scenes/addCoupon.fxml"));
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);

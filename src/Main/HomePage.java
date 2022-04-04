@@ -47,8 +47,7 @@ public class HomePage {
     }
 
     public void goToCart(MouseEvent mouseEvent) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("../Scenes/placeholder.fxml"));
-        // root = FXMLLoader.load(getClass().getResource("../Scenes/cart.fxml"));
+        root = FXMLLoader.load(getClass().getResource("../Scenes/cart.fxml"));
         stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

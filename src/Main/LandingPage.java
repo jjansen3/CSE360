@@ -36,7 +36,6 @@ public class LandingPage {
     }
 
     public void goToMenu(MouseEvent mouseEvent) throws IOException {
-
         stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
         menuGUI menuScene = new menuGUI(stage);
         stage.setScene(menuScene.getScene());
