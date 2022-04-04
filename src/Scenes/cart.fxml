@@ -211,9 +211,9 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="357.0" layoutY="-10.0" prefHeight="132.0" prefWidth="586.0" text="Oregano's Trattoria" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="345.0" layoutY="-20.0" prefHeight="132.0" prefWidth="590.0" text="Oregano's Trattoria" textAlignment="CENTER">
          <font>
-            <Font name="Bonheur Royale Regular" size="90.0" />
+            <Font name="Lucida Calligraphy Italic" size="56.0" />
          </font>
       </Label>
       <Label alignment="CENTER" layoutX="195.0" layoutY="84.0" prefWidth="80.0" text="About Us">
