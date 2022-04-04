@@ -32,11 +32,10 @@
             <Line endX="580.0" layoutX="40.0" layoutY="175.0" />
             <ScrollPane layoutX="40.0" layoutY="190.0" prefHeight="465.0" prefWidth="560.0">
                <content>
-                  <AnchorPane prefHeight="594.0" prefWidth="540.0">
+                  <AnchorPane fx:id="anchor1" prefHeight="594.0" prefWidth="540.0">
                      <children>
+<!--
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutX="20.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="480.0" />
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutX="20.0" layoutY="190.0" stroke="BLACK" strokeType="INSIDE" width="480.0" />
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutX="20.0" layoutY="360.0" stroke="BLACK" strokeType="INSIDE" width="480.0" />
                         <ImageView fitHeight="108.0" fitWidth="124.0" layoutX="41.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Assets/las.jpg" />
@@ -47,17 +46,13 @@
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="price" layoutX="347.0" layoutY="50.0" text="Price">
+                        <Label fx:id="price" layoutX="415.0" layoutY="50.0" text="Price">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label layoutX="420.0" layoutY="46.0" prefHeight="30.0" prefWidth="41.0" text="SIZE">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <SplitMenuButton layoutX="391.0" layoutY="83.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0">
+                        
+                        <SplitMenuButton layoutX="415.0" layoutY="83.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Sizes">
                           <items>
                             <MenuItem mnemonicParsing="false" text="Small" />
                             <MenuItem mnemonicParsing="false" text="Medium" />
@@ -66,6 +61,7 @@
                         </SplitMenuButton>
                         <Label fx:id="descIngredient" alignment="TOP_LEFT" layoutX="165.0" layoutY="75.0" prefHeight="83.0" prefWidth="218.0" wrapText="true" text="Description of ingredient goes here" />
                      </children>
+                     -->
                   </AnchorPane>
                </content>
             </ScrollPane>
@@ -211,9 +207,9 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="345.0" layoutY="-20.0" prefHeight="132.0" prefWidth="590.0" text="Oregano's Trattoria" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="357.0" layoutY="-10.0" prefHeight="132.0" prefWidth="586.0" text="Oregano's Trattoria" textAlignment="CENTER">
          <font>
-            <Font name="Lucida Calligraphy Italic" size="56.0" />
+            <Font name="Bonheur Royale Regular" size="90.0" />
          </font>
       </Label>
       <Label alignment="CENTER" layoutX="195.0" layoutY="84.0" prefWidth="80.0" text="About Us">
