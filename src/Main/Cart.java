@@ -69,19 +69,19 @@ public class Cart implements Initializable{
     		rectangle.toFront();
     		anchor1.getChildren().add(rectangle);
     			
-    		Label ingredient2 = new Label("2nd Name"); //Main.currCust.cart.items.get(i).name);
+    		Label ingredient2 = new Label(Main.currCust.cart.items.get(i).name);
     		ingredient2.setTranslateX(165);
     		ingredient2.setTranslateY(50+(170*i));
     		ingredient2.toFront();
     		anchor1.getChildren().add(ingredient2);
     			
-    		Label price = new Label("$" + "2nd Price"); //Double.toString(Main.currCust.cart.items.get(i).price));
+    		Label price = new Label("$" + Double.toString(Main.currCust.cart.items.get(i).price));
     		price.setTranslateX(415);
     		price.setTranslateY(50+(170*i));
     		price.toFront();
     		anchor1.getChildren().add(price);
     			
-    		Label description = new Label("Description goes here"); //Main.currCust.cart.items.get(i).description);
+    		Label description = new Label(Main.currCust.cart.items.get(i).ingredients);
     		description.setTranslateX(165);
     		description.setTranslateY(80+(170*i));
     		description.toFront();
@@ -98,7 +98,7 @@ public class Cart implements Initializable{
     		sizes.toFront();
     		anchor1.getChildren().add(sizes);
     			
-    		ImageView imageV = new ImageView("Assets/las.jpg");
+    		ImageView imageV = new ImageView(Main.currCust.cart.items.get(i).image);
     		imageV.setFitHeight(108);
     		imageV.setFitWidth(108);
     		imageV.setLayoutX(41);
