@@ -18,6 +18,7 @@ public class Order {
 
     public void addItem(MenuItem item) {
         items.add(item);
+        total = total + item.price;
     }
 
     public void remItem(MenuItem item) {

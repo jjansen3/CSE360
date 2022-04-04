@@ -16,17 +16,16 @@ public class Main {
     static MenuItem item5 = new MenuItem("Chicken Alfredo", "Creamy Alfredo sauce and fresh sauted, slicred chicken breast served over a bed of tender fettuccine pasta.", "", 12, new Image("Assets/chicken.jpg"));
     static MenuItem item6 = new MenuItem("Ravioli", "Home-made ravioli stuffed with Rocotta cheese in pesto sauce.", "", 12, new Image("Assets/rav.jpg"));
     static MenuItem item7 = new MenuItem("Panna Cotta", "A creamy dessert with strawberry sauce, topped with fresh strawberries.", "", 12, new Image("Assets/panna.jpg"));
-    
     static MenuItem item8 = new MenuItem("Chicken Parmesan", "Baked chicken with parmesan breading served on penne with tomato sauce.", "", 12, new Image("Assets/parme.jpg"));
-    
     static MenuItem item9 = new MenuItem("Tortellini", "Tortellini stuffed with butternut squash and Rocotta cheese, topped with Burrata cheese and arugula.", "", 12, new Image("Assets/tort.jpg"));
+    
     public static ArrayList<Customer> customers = new ArrayList<>();
     
     
 
     //Test Main.Menu
-    public static Menu menu = new Menu(new ArrayList<>(Arrays.asList(item, item2, item2, item3, item4, item5, item6, item7, item8, item9)));
+    public static Menu menu = new Menu(new ArrayList<>(Arrays.asList(item, item1, item2, item3, item4, item5, item6, item7, item8, item9)));
 
-    public static Customer currCust;
+    public static Customer currCust = new Customer("og.trattoria@res.org", "John", "Smith", "oregano123", "refcode", "1234567890", "123 Sesame St", new ArrayList<Order>(), new Order(5, new ArrayList<>(Arrays.asList(item, item, item, item, item, item, item, item, item, item)), 0.0, "date") , new ArrayList<Coupon>(), new ArrayList<>());
 
 }

@@ -48,6 +48,10 @@ public class Profile implements Initializable {
 
 
         // Display user's Coupon
+        if (Main.currCust.coupons.size() > 0) {
+            System.out.println(Main.currCust.coupons.get(0).code);
+        }
+
         for (int i = 0; i < Main.currCust.coupons.size(); i++) {
             cDesc.setText(Main.currCust.coupons.get(i).desc);
             cCode.setText(Main.currCust.coupons.get(i).code);
@@ -98,7 +102,6 @@ public class Profile implements Initializable {
     }
 
 
-    /*
     public void editProfile(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("../Scenes/editProfile.fxml"));
         stage = (Stage)accountMenu.getScene().getWindow();
@@ -106,7 +109,7 @@ public class Profile implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-     */
+
 
 
     // Dev Switch
@@ -131,6 +134,7 @@ public class Profile implements Initializable {
 
     public void logoutQuit(ActionEvent event) throws IOException {
         Login.custLoggedIn = false;
+        Login.devLogin = false;
         stage = (Stage)accountMenu.getScene().getWindow();
         stage.close();
     }
@@ -140,6 +144,7 @@ public class Profile implements Initializable {
         stage = (Stage)accountMenu.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        Login.custLoggedIn = false;
         stage.show();
     }
 

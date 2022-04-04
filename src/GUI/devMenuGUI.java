@@ -1,6 +1,5 @@
 package GUI;
 
-import Main.Main;
 import Main.MenuItem;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -20,6 +19,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import java.util.ArrayList;
+import Main.*;
 
 import java.io.IOException;
 
@@ -156,7 +157,9 @@ public class devMenuGUI {
     }
 
     public void goToHome(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("../Scenes/homePage.fxml"));
+        Login.custLoggedIn = false;
+        Login.devLogin = false;
+        Parent root = FXMLLoader.load(getClass().getResource("../Scenes/landingPage.fxml"));
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);

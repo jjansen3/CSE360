@@ -60,6 +60,7 @@
                           </items>
                         </SplitMenuButton>
                         <Label fx:id="descIngredient" alignment="TOP_LEFT" layoutX="165.0" layoutY="75.0" prefHeight="83.0" prefWidth="218.0" wrapText="true" text="Description of ingredient goes here" />
+                     -->
                      </children>
                      -->
                   </AnchorPane>
@@ -158,7 +159,7 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Button layoutX="823.0" layoutY="655.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="217.0" text="Place Order">
+            <Button fx:id="PO" layoutX="823.0" layoutY="655.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="217.0" onMousePressed="#placeOrder" text="Place Order">
                <font>
                   <Font size="28.0" />
                </font>

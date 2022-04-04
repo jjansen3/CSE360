@@ -20,6 +20,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SplitMenuButton;
@@ -39,6 +40,8 @@ public class Cart implements Initializable{
     */
     @FXML
     private AnchorPane anchor1;
+    @FXML
+    private Button PO;
     
     
     
@@ -56,65 +59,75 @@ public class Cart implements Initializable{
     	Color white = new Color(1,1,1,1);
     	Color black = new Color(0,0,0,1);
     	
-    	for(int i = 0; i < Main.currCust.cart.items.size(); i++)
-    	{
-    		//rectangle for background of menu items
-    		Rectangle rectangle = new Rectangle();
-    		rectangle.setWidth(480);
-    		rectangle.setHeight(150);
-    		rectangle.setLayoutX(20);
-    		rectangle.setLayoutY(20+(170*i));
-    		rectangle.setStroke(black);
-    		rectangle.setFill(white);
-    		rectangle.toFront();
-    		anchor1.getChildren().add(rectangle);
-    			
-    		Label ingredient2 = new Label(Main.currCust.cart.items.get(i).name);
-    		ingredient2.setTranslateX(165);
-    		ingredient2.setTranslateY(50+(170*i));
-    		ingredient2.toFront();
-    		anchor1.getChildren().add(ingredient2);
-    			
-    		Label price = new Label("$" + Double.toString(Main.currCust.cart.items.get(i).price));
-    		price.setTranslateX(415);
-    		price.setTranslateY(50+(170*i));
-    		price.toFront();
-    		anchor1.getChildren().add(price);
-    			
-    		Label description = new Label(Main.currCust.cart.items.get(i).ingredients);
-    		description.setTranslateX(165);
-    		description.setTranslateY(80+(170*i));
-    		description.toFront();
-    		anchor1.getChildren().add(description);
-    			
-    		SplitMenuButton sizes = new SplitMenuButton(); //size of order dropdown
-    		sizes.setText("Sizes");
-    		MenuItem choice1 = new MenuItem("Small");
-    		MenuItem choice2 = new MenuItem("Medium");
-    		MenuItem choice3 = new MenuItem("Large");
-    		sizes.getItems().addAll(choice1, choice2, choice3);
-    		sizes.setTranslateX(415);
-    		sizes.setTranslateY(80+(170*i));
-    		sizes.toFront();
-    		anchor1.getChildren().add(sizes);
-    			
-    		ImageView imageV = new ImageView(Main.currCust.cart.items.get(i).image);
-    		imageV.setFitHeight(108);
-    		imageV.setFitWidth(108);
-    		imageV.setLayoutX(41);
-    		imageV.setLayoutY(41+170*i);
-    		imageV.setPickOnBounds(true);
-    		anchor1.getChildren().add(imageV);
-    			
-
-    		}
+        if (Main.currCust.cart != null) {
+            for(int i = 0; i < Main.currCust.cart.items.size(); i++)
+    	    {
+                //rectangle for background of menu items
+                Rectangle rectangle = new Rectangle();
+                rectangle.setWidth(480);
+                rectangle.setHeight(150);
+                rectangle.setLayoutX(20);
+                rectangle.setLayoutY(20+(170*i));
+                rectangle.setStroke(black);
+                rectangle.setFill(white);
+                rectangle.toFront();
+                anchor1.getChildren().add(rectangle);
+                    
+                Label ingredient2 = new Label(Main.currCust.cart.items.get(i).name);
+                ingredient2.setTranslateX(165);
+                ingredient2.setTranslateY(50+(170*i));
+                ingredient2.toFront();
+                anchor1.getChildren().add(ingredient2);
+                    
+                Label price = new Label("$" + Double.toString(Main.currCust.cart.items.get(i).price));
+                price.setTranslateX(415);
+                price.setTranslateY(50+(170*i));
+                price.toFront();
+                anchor1.getChildren().add(price);
+                    
+                Label description = new Label(Main.currCust.cart.items.get(i).ingredients);
+                description.setTranslateX(165);
+                description.setTranslateY(80+(170*i));
+                description.toFront();
+                description.setPrefHeight(83.0);
+                description.setPrefWidth(218.0);
+                description.setWrapText(true);
+                anchor1.getChildren().add(description);
+                    
+                SplitMenuButton sizes = new SplitMenuButton(); //size of order dropdown
+                sizes.setText("Sizes");
+                MenuItem choice1 = new MenuItem("Small");
+                MenuItem choice2 = new MenuItem("Medium");
+                MenuItem choice3 = new MenuItem("Large");
+                sizes.getItems().addAll(choice1, choice2, choice3);
+                sizes.setTranslateX(415);
+                sizes.setTranslateY(80+(170*i));
+                sizes.toFront();
+                anchor1.getChildren().add(sizes);
+                    
+                ImageView imageV = new ImageView(Main.currCust.cart.items.get(i).image);
+                imageV.setFitHeight(108);
+                imageV.setFitWidth(108);
+                imageV.setLayoutX(41);
+                imageV.setLayoutY(41+170*i);
+                imageV.setPickOnBounds(true);
+                anchor1.getChildren().add(imageV);
+        }
+    }
     		
     //	}
 
     	
     }
     
-    
+    public void placeOrder(MouseEvent mouseEvent) throws IOException {
+        Main.currCust.orders.add(Main.currCust.cart);
+        root = FXMLLoader.load(getClass().getResource("../Scenes/profile.fxml"));
+        stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     
     public void goToHome(MouseEvent mouseEvent) throws IOException {
         root = FXMLLoader.load(getClass().getResource("../Scenes/homePage.fxml"));

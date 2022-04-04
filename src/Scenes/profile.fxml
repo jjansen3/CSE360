@@ -134,9 +134,9 @@
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutX="20.0" layoutY="190.0" stroke="BLACK" strokeType="INSIDE" width="480.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutX="20.0" layoutY="360.0" stroke="BLACK" strokeType="INSIDE" width="480.0" />
                   <Label layoutX="50.0" layoutY="35.0" text="Promo" />
-                  <Label layoutX="49.0" layoutY="77.0" text="Description" />
-                  <Label layoutX="49.0" layoutY="127.0" text="Coupon Code" />
-                  <Label layoutX="368.0" layoutY="35.0" text="Valid Until" />
+                  <Label fx:id="cDesc" layoutX="49.0" layoutY="77.0" text="Description" />
+                  <Label fx:id="cCode" layoutX="49.0" layoutY="127.0" text="Coupon Code" />
+                  <Label fx:id="cExp" layoutX="368.0" layoutY="35.0" text="Valid Until" />
                </children>
             </AnchorPane>
          </content>
@@ -148,10 +148,10 @@
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutX="20.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" width="480.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutX="20.0" layoutY="190.0" stroke="BLACK" strokeType="INSIDE" width="480.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="150.0" layoutX="20.0" layoutY="360.0" stroke="BLACK" strokeType="INSIDE" width="480.0" />
-                  <Label layoutX="40.0" layoutY="33.0" text="Order #1" />
+                  <Label fx:id="orderNum" layoutX="40.0" layoutY="33.0" text="Order #1" />
                   <Label layoutX="45.0" layoutY="68.0" text="Description" />
-                  <Label layoutX="47.0" layoutY="124.0" text="Total Price" />
-                  <Label layoutX="418.0" layoutY="33.0" text="Date" />
+                  <Label fx:id="orderPrice" layoutX="47.0" layoutY="124.0" text="Total Price" />
+                  <Label fx:id="orderDate" layoutX="418.0" layoutY="33.0" text="Date" />
                   <Line endX="332.79998779296875" endY="-1.1444091796875E-5" layoutX="141.0" layoutY="58.0" startX="-100.0" />
                </children>
             </AnchorPane>

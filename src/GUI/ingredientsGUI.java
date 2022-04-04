@@ -2,6 +2,7 @@ package GUI;
 
 import Main.Main.*;
 import Main.*;
+import Main.Main;
 import Main.MenuItem;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -32,6 +33,7 @@ import java.io.IOException;
 // ingredients for individual item
 public class ingredientsGUI {
     Scene ingredientsScene;
+    public static int curr;
 
     public ingredientsGUI(Stage primaryStage) {
 
@@ -106,7 +108,7 @@ public class ingredientsGUI {
         rect.setStrokeWidth(3.0);
         rect.setFill(Color.WHITE);
         StackPane ingredientsGUI = new StackPane();
-        Text name = new Text(Main.menu.items.get(0).name.toString()); // have to refer to items in arrList (Main.menu.items)
+        Text name = new Text(); // have to refer to items in arrList (Main.menu.items)
         name.setFont(Font.font("Verdana", 18));
         Text ingredientsTitle = new Text("Ingredients");
         ingredientsTitle.setFont(Font.font("Verdana", 18));
@@ -161,7 +163,7 @@ public class ingredientsGUI {
             @Override
             public void handle(ActionEvent event) {
                 //switch to cart page
-                //Main.currCust.cart.addItem(Main.menu.items.get(0));
+                Main.currCust.cart.addItem(Main.menu.items.get(0));
                 try {
                     goToCart(event);
                 } catch (IOException e) {
@@ -183,6 +185,5 @@ public class ingredientsGUI {
         stage.setScene(scene);
         stage.show();
     }
-
 
 }

@@ -82,7 +82,9 @@ public class Register {
     public void storeUserInfo() throws NullPointerException {
 
         if (allowEmail == true && noNull == true && password_match == true) {
-            Main.customers.add(new Customer(email.getText(), firstName.getText(), lastName.getText(), password.getText(), referralCode.getText(), "", "", new ArrayList<>(), null, new ArrayList<>(), new ArrayList<>()));
+            Customer cust = new Customer(email.getText(), firstName.getText(), lastName.getText(), password.getText(), referralCode.getText(), "", "", new ArrayList<>(), new Order(1, new ArrayList<MenuItem>(), -1, "4/3/2022"), new ArrayList<>(), new ArrayList<>());
+            Main.customers.add(cust);
+            Main.currCust = cust;
             regDone = true;
             Login.custLoggedIn = true;
         }

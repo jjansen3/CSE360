@@ -67,9 +67,6 @@ public class AddCoupon implements Initializable{
 		aCoup.getItems().addAll(c.code,b.code,d.code);
 		
 		TreeItem<String> rootItem = new TreeItem<>("Customers");
-		//TreeItem<String> rootItem = new TreeItem<>("Files", new ImageView(new Image("Folder_Icon.png")));
-		 Main.currCust = new Customer("Demi", "Archi", "Demii", "Pass", "refcode", "number", "address", new ArrayList<Order>() , new Order(5, new ArrayList<>(), 0.0, "date"), new ArrayList<Coupon>(), new ArrayList<Card>());
-		Main.customers.add(Main.currCust);
 		
 		
 	
@@ -87,7 +84,7 @@ public class AddCoupon implements Initializable{
 			TreeItem<String> branchItem = new TreeItem<>(Main.customers.get(i).fName + " " + Main.customers.get(i).lName);
 			TreeItem<String> activeCoupons = new TreeItem<>("Active Coupons: " +Main.customers.get(i).coupons.size());
 			TreeItem<String> frequency = new TreeItem<>("Orders: "+Main.customers.get(i).orders.size());
-			branchItem.getChildren().addAll(frequency, activeCoupons);
+			//branchItem.getChildren().addAll(frequency, activeCoupons);
 			rootItem.getChildren().add(branchItem);
 			
 		}
@@ -112,7 +109,8 @@ public class AddCoupon implements Initializable{
 	public void applyCoupon(ActionEvent event) {
 		if (selectItem()==true)
 		{
-			Main.currCust.addCoupon("D", "Be", "AA");
+			Main.customers.get(treeView.getSelectionModel().getSelectedIndex() - 1).coupons.add(list[aCoup.getSelectionModel().getSelectedIndex()]);
+			System.out.print(Main.customers.get(0).coupons.get(0).code);
 			System.out.println("Coupon Applied");
 			stagee = (Stage) Anchor.getScene().getWindow();
 			devMenuGUI devMenu2 = new devMenuGUI(stagee);
