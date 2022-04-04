@@ -85,7 +85,7 @@ public class Cart implements Initializable{
     }
 
     public void goToAccount(MouseEvent mouseEvent) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("../Scenes/login.fxml"));
+        root = FXMLLoader.load(getClass().getResource("../Scenes/profile.fxml"));
         stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
