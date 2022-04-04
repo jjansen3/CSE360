@@ -58,14 +58,14 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="250.0" layoutY="220.0" prefHeight="150.0" prefWidth="780.0" text="Welcome to" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="256.0" layoutY="169.0" prefHeight="96.0" prefWidth="784.0" text="Welcome to" textAlignment="CENTER">
          <font>
-            <Font name="Lucida Calligraphy Italic" size="96.0" />
+            <Font name="Bonheur Royale Regular" size="160.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="120.0" layoutY="410.0" prefHeight="150.0" prefWidth="1040.0" text="Oregano's Trattoria" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="140.0" layoutY="360.0" prefHeight="220.0" prefWidth="1000.0" text="Oregano's Trattoria" textAlignment="CENTER">
          <font>
-            <Font name="Lucida Calligraphy Italic" size="96.0" />
+            <Font name="Bonheur Royale Regular" size="160.0" />
          </font>
       </Label>
       <Label alignment="CENTER" layoutX="1142.0" layoutY="74.0" prefWidth="56.0" text="Login">
