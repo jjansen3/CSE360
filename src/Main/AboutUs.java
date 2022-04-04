@@ -4,6 +4,7 @@ Landing page controller
 package Main;
 
 import GUI.Start;
+import GUI.menuGUI;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -41,11 +42,9 @@ public class AboutUs {
     }
 
     public void menuButton(MouseEvent mouseEvent) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("../Scenes/aboutUs.fxml"));
-        //root = FXMLLoader.load(getClass().getResource("../pages/menu.fxml"));
         stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        menuGUI menuScene = new menuGUI(stage);
+        stage.setScene(menuScene.getScene());
         stage.show();
     }
 
