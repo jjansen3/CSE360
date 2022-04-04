@@ -166,7 +166,12 @@ public class menuGUI {
         cartButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                // cart page
+                //switch to about page
+                try {
+                    goToCart(event);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -177,6 +182,7 @@ public class menuGUI {
                 //switch to main page
                 try {
                     goToLogin(event);
+                    
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -237,13 +243,21 @@ public class menuGUI {
     }
 
     public void goToLogin(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("../Scenes/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../Scenes/profile.fxml"));
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-
+    
+    
+    public void goToCart(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("../Scenes/cart.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
 
 }
