@@ -12,7 +12,7 @@ public class Customer {
     String phoneNum;
     String address;
     ArrayList<Order> orders;
-    Order cart;
+    public Order cart;
     ArrayList<Coupon> coupons;
     ArrayList<Card> cards;
 

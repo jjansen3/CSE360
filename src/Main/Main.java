@@ -27,6 +27,6 @@ public class Main {
     //Test Main.Menu
     public static Menu menu = new Menu(new ArrayList<>(Arrays.asList(item, item2, item2, item3, item4, item5, item6, item7, item8, item9)));
 
-    static Customer currCust;
+    public static Customer currCust;
 
 }

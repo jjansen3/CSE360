@@ -16,11 +16,11 @@ public class Order {
         this.date = date;
     }
 
-    void addItem(MenuItem item) {
+    public void addItem(MenuItem item) {
         items.add(item);
     }
 
-    void remItem(MenuItem item) {
+    public void remItem(MenuItem item) {
         items.remove(item);
     }
 
