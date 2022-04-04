@@ -6,8 +6,11 @@ import Main.MenuItem;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 //import javafx.scene.control.MenuItem;
@@ -152,11 +155,33 @@ public class ingredientsGUI {
                 primaryStage.setScene(menuPage.getScene());
             }
         });
+
+        //Switches to the checkout page when the backButton pressed
+        addCheckoutButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                //switch to cart page
+                //Main.currCust.cart.addItem(Main.menu.items.get(0));
+                try {
+                    goToCart(event);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     //Returns this scene
     public Scene getScene() {
         return ingredientsScene;
+    }
+
+    public void goToCart(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("../Scenes/cart.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 

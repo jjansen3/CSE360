@@ -75,14 +75,13 @@ public class menuGUI {
         title.setFont(Font.font("Verdana", FontWeight.BOLD, 35));
 
         // Button text
-
+        /*
         Text homeText = new Text();
         homeText.setText("Home");
         homeText.setFont(Font.font("Verdana", FontWeight.BOLD, 15));
 
         Text aboutText = new Text();
         homeText.setText("About Us");
-        /*
         Text cartText = new Text();
         homeText.setText("Cart");
         Text loginText = new Text();
@@ -96,6 +95,8 @@ public class menuGUI {
         for(MenuItem m : Main.menu.items) {
             StackPane itemGUI = new StackPane();
             Rectangle rect = new Rectangle();
+            Button addCartButton = new Button();
+            addCartButton.setText("Add to Cart");
             rect.setWidth(400);
             rect.setHeight(150);
             rect.setStroke(Color.LIGHTGRAY);
@@ -105,6 +106,19 @@ public class menuGUI {
             rect.setOnMouseClicked(mouseEvent -> {
                 ingredientsGUI ingredientsPage = new ingredientsGUI(primaryStage);
                 primaryStage.setScene(ingredientsPage.getScene());
+            });
+            //Switches to the cart page when the addCartButton pressed
+            addCartButton.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    //switch to cart page
+                    try {
+                        Main.currCust.cart.addItem(m);
+                        goToCart(event);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             });
             ImageView image = new ImageView(m.image);
             image.setFitHeight(100);
@@ -117,14 +131,16 @@ public class menuGUI {
             price.setFont(Font.font("Verdana", FontWeight.BOLD, 15));
             price.setFill(Color.GREEN);
             itemIngredients.setWrappingWidth(220);
-            itemGUI.getChildren().addAll(rect, image, itemName, itemIngredients, price);
+            itemGUI.getChildren().addAll(rect, image, itemName, itemIngredients, price, addCartButton);
             itemGUI.setMargin(image, new Insets(0, 250, 0, 0));
             itemGUI.setAlignment(itemName, Pos.CENTER_LEFT);
             itemGUI.setMargin(itemName, new Insets(0, 0, 75, 157));
             itemGUI.setAlignment(itemIngredients, Pos.TOP_CENTER);
-            itemGUI.setMargin(itemIngredients, new Insets(60, 0, 0, 132));
+            itemGUI.setMargin(itemIngredients, new Insets(75, 0, 0, 132));
             itemGUI.setAlignment(price, Pos.CENTER_RIGHT);
-            itemGUI.setMargin(price, new Insets(0, 25, 75, 0));
+            itemGUI.setMargin(price, new Insets(0, 25, 30, 0));
+            //itemGUI.setAlignment(addCartButton, Pos.BOTTOM_CENTER);
+            itemGUI.setMargin(addCartButton, new Insets(100,50,0,300));
             menuGrid.add(itemGUI, i, j);
             i++;
 
@@ -182,7 +198,7 @@ public class menuGUI {
                 //switch to main page
                 try {
                     goToLogin(event);
-                    
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -243,14 +259,14 @@ public class menuGUI {
     }
 
     public void goToLogin(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("../Scenes/profile.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../Scenes/login.fxml"));
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-    
-    
+
+
     public void goToCart(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../Scenes/cart.fxml"));
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
